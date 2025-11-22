@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
                     >
                         <div
                             aria-hidden
-                            className="w-9 h-9 rounded-lg flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 shadow-md transform transition-transform duration-200 group-hover:scale-105"
+                            className="w-9 h-9 rounded-lg flex items-center justify-center bg-linear-to-br from-blue-500 to-purple-600 shadow-md transform transition-transform duration-200 group-hover:scale-105"
                         >
                             <Code2 className="w-5 h-5 text-white" />
                         </div>
@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
 
                         <Link
                             href="#signup"
-                            className="inline-flex items-center px-4 py-2 rounded-lg bg-white text-black font-semibold shadow-sm hover:translate-y-[-1px] transition-transform"
+                            className="inline-flex items-center px-4 py-2 rounded-lg bg-white text-black font-semibold shadow-sm hover:translate-y-px transition-transform"
                         >
                             Signup
                         </Link>

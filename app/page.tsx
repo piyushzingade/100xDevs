@@ -1,12 +1,13 @@
 import { Hero } from "@/components/hero";
 import { Navbar } from "@/components/navbar";
-
+import { Courses } from "@/components/courses";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <Navbar />
       <Hero />
+      <Courses />
     </div>
   );
 }
