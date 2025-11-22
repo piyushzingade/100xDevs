@@ -2,14 +2,24 @@ import { Hero } from "@/components/hero";
 import { Navbar } from "@/components/navbar";
 import { Courses } from "@/components/courses";
 import { Features } from "@/components/features";
+import { Testimonials } from "@/components/testimonial";
+import { Footer } from "@/components/footer";
+import { Cta } from "@/components/cta";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black overflow-x-hidden font-sans">
       <Navbar />
-      <Hero />
-      <Courses />
-      <Features />
+
+      <main>
+        <Hero />
+        <Courses />
+        <Features />
+        <Testimonials />
+        <Cta />
+      </main>
+
+      <Footer />
     </div>
   );
-}
+};

@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
                     >
                         <div
                             aria-hidden
-                            className="w-9 h-9 rounded-lg flex items-center justify-center bg-linear-to-br from-blue-500 to-purple-600 shadow-md transform transition-transform duration-200 group-hover:scale-105"
+                            className="w-9 h-9 rounded-lg flex items-center justify-center bg-linear-to-br from-blue-500 to-blue-700 shadow-md transform transition-transform duration-200 group-hover:scale-105"
                         >
                             <Code2 className="w-5 h-5 text-white" />
                         </div>
@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
 
                         <Link
                             href="#signup"
-                            className="inline-flex items-center px-4 py-2 rounded-lg bg-white text-black font-semibold shadow-sm hover:translate-y-px transition-transform"
+                            className="inline-flex items-center px-4 py-2 rounded-lg bg-linear-to-br from-blue-500 to-blue-700   font-semibold shadow-sm hover:translate-y-px transition-transform"
                         >
                             Signup
                         </Link>
@@ -121,7 +121,7 @@ export const Navbar: React.FC = () => {
                         <Link
                             href="#signup"
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block w-full text-center bg-white text-black py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-100 transition-colors"
+                            className="block w-full text-center text-white py-2.5 rounded-lg text-sm font-semibold bg-linear-to-br from-blue-500 to-blue-700 hover:brightness-110 transition-all"
                         >
                             Signup
                         </Link>

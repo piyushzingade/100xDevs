@@ -1,5 +1,5 @@
 "use client"
-import { Users, Briefcase, CheckCircle2, GitBranch, Github, TrendingUp, Award } from "lucide-react"
+import { Users, CheckCircle2, GitBranch, Github, Award } from "lucide-react"
 import type React from "react"
 
 import { motion } from "motion/react"
@@ -38,33 +38,125 @@ const ContributionGraph = () => (
 )
 
 const SmallContributionPreview = () => (
-    <div className="flex items-center justify-center gap-4 w-full h-full p-4">
-        <div className="flex-1">
+    <div className="flex flex-col items-center justify-center gap-3 w-full h-full p-4">
+        {/* Main Project Card */}
+        <motion.div
+            className="relative w-full bg-linear-to-br from-[#0d1117] via-[#010409] to-[#0d1117] border border-[#30363d] rounded-xl p-4 overflow-hidden group/card"
+            whileHover={{ scale: 1.03, y: -2 }}
+            transition={{ duration: 0.3 }}
+        >
+            {/* Gradient glow effect */}
+            <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-transparent to-purple-500/10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+
+            {/* Animated border glow */}
             <motion.div
-                className="bg-[#010409] border border-[#30363d] rounded-lg p-3 text-center hover:border-blue-500/50 transition-colors"
-                whileHover={{ scale: 1.05 }}
-            >
-                <div className="text-lg font-bold text-blue-400">cal.com</div>
-                <div className="text-xs text-gray-400 mt-1">Scheduling Platform</div>
+                className="absolute inset-0 rounded-xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"
+                style={{
+                    background: "linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent)",
+                    filter: "blur(8px)"
+                }}
+                animate={{
+                    x: ["-100%", "200%"]
+                }}
+                transition={{
+                    duration: 2,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "linear"
+                }}
+            />
+
+            <div className="relative z-10 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                    {/* Cal.com Logo placeholder */}
+                    <motion.div
+                        className="w-10 h-10 rounded-lg bg-linear-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/30"
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <CalComLogo className="w-6 h-6 text-white" />
+                    </motion.div>
+
+                    <div className="text-left">
+                        <div className="text-base font-bold text-white group-hover/card:text-blue-300 transition-colors">
+                            cal.com
+                        </div>
+                        <div className="text-[10px] text-gray-500 group-hover/card:text-gray-400 transition-colors">
+                            Scheduling Platform
+                        </div>
+                    </div>
+                </div>
+
+                {/* Open Source Badge */}
                 <motion.div
-                    className="mt-2 inline-block px-2 py-1 bg-white/5 rounded text-[10px] text-gray-300"
-                    animate={{ scale: [1, 1.05, 1] }}
+                    className="px-2.5 py-1 bg-linear-to-r from-emerald-500/20 to-green-500/20 border border-emerald-500/30 rounded-full backdrop-blur-sm"
+                    animate={{
+                        boxShadow: [
+                            "0 0 0px rgba(16, 185, 129, 0)",
+                            "0 0 12px rgba(16, 185, 129, 0.4)",
+                            "0 0 0px rgba(16, 185, 129, 0)"
+                        ]
+                    }}
                     transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 >
-                    Open Source
+                    <span className="text-[9px] font-semibold text-emerald-300 uppercase tracking-wider">
+                        Open Source
+                    </span>
                 </motion.div>
+            </div>
+        </motion.div>
+
+        {/* Stats Cards Row */}
+        <div className="flex gap-2 w-full">
+            {/* GitHub Stars Card */}
+            <motion.div
+                className="flex-1 relative bg-linear-to-br from-[#161b22] to-[#0d1117] rounded-lg p-3 border border-[#30363d] overflow-hidden group/stat"
+                whileHover={{ scale: 1.05, y: -2 }}
+                transition={{ duration: 0.2 }}
+            >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-linear-to-br from-green-500/10 to-transparent opacity-0 group-hover/stat:opacity-100 transition-opacity duration-300" />
+
+                <div className="relative z-10 flex flex-col items-center gap-1">
+                    <div className="flex items-center gap-1">
+                        <motion.div
+                            whileHover={{ rotate: 360 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <Github className="w-3.5 h-3.5 text-gray-400 group-hover/stat:text-white transition-colors" />
+                        </motion.div>
+                        <span className="text-[9px] text-gray-500 uppercase tracking-wide">Stars</span>
+                    </div>
+                    <div className="text-lg font-black text-green-400 group-hover/stat:text-green-300 transition-colors">
+                        12k+
+                    </div>
+                </div>
+            </motion.div>
+
+            {/* Contributions Card */}
+            <motion.div
+                className="flex-1 relative bg-linear-to-br from-[#161b22] to-[#0d1117] rounded-lg p-3 border border-[#30363d] overflow-hidden group/contrib"
+                whileHover={{ scale: 1.05, y: -2 }}
+                transition={{ duration: 0.2 }}
+            >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 to-transparent opacity-0 group-hover/contrib:opacity-100 transition-opacity duration-300" />
+
+                <div className="relative z-10 flex flex-col items-center gap-1">
+                    <div className="flex items-center gap-1">
+                        <motion.div
+                            animate={{ scale: [1, 1.2, 1] }}
+                            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                        >
+                            <GitBranch className="w-3.5 h-3.5 text-gray-400 group-hover/contrib:text-white transition-colors" />
+                        </motion.div>
+                        <span className="text-[9px] text-gray-500 uppercase tracking-wide">PRs</span>
+                    </div>
+                    <div className="text-lg font-black text-blue-400 group-hover/contrib:text-blue-300 transition-colors">
+                        25+
+                    </div>
+                </div>
             </motion.div>
         </div>
-        <motion.div
-            className="flex-1 bg-[#161b22] rounded-lg p-2 border border-[#30363d] text-center hover:border-green-500/50 transition-colors"
-            whileHover={{ scale: 1.05, y: -2 }}
-        >
-            <div className="flex items-center justify-center gap-1 text-xs text-gray-300">
-                <Github className="w-3 h-3" />
-                <span>Open Source</span>
-            </div>
-            <div className="text-sm font-bold text-green-400 mt-1">12k+ Stars</div>
-        </motion.div>
     </div>
 )
 
@@ -415,7 +507,10 @@ const StatCounter = ({ value, label, icon: Icon }: { value: string; label: strin
 
 export const Features = () => {
     return (
-        <section className="py-32 px-4 bg-brand-black relative border-b border-[#111]" id="syllabus">
+        <section className="py-32 px-4 bg-black relative border-b border-[#111]" id="syllabus">
+            {/* Background noise */}
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none"></div>
+
             <div className="max-w-7xl mx-auto mb-16 px-2 md:px-4">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                     <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
