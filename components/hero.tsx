@@ -11,11 +11,11 @@ export function Hero() {
         <section className="relative min-h-screen flex flex-col overflow-hidden bg-black">
             {/* Simple Background Pattern */}
             <div className="absolute inset-0 -z-10">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-size:4rem_4rem" />
                 <div className="absolute inset-0 bg-blue-500/5" />
             </div>
 
-            <div className="max-w-7xl w-full mx-auto px-6 lg:px-12 py-12 lg:py-20">
+            <div className="max-w-7xl w-full mx-auto px-6 lg:px-12 pt-24 lg:pt-32 pb-12 lg:pb-20">
                 {/* Top Section: Content */}
                 <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
                     {/* Badge */}
@@ -33,11 +33,9 @@ export function Hero() {
                         initial={hidden}
                         animate={enter}
                         transition={{ duration: 0.7, delay: 0.1 }}
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 max-w-4xl"
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 max-w-4xl"
                     >
-                        Don&apos;t just write code —
-                        <br />
-                        <span className="text-blue-400">build resilient systems.</span>
+                        Don&apos;t just write code — <span className="text-blue-400">build resilient systems.</span>
                     </motion.h1>
 
                     {/* Subheadline */}
@@ -45,7 +43,7 @@ export function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.7, delay: 0.2 }}
-                        className="text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mb-8"
+                        className="text-sm md:text-base text-white/70 leading-relaxed max-w-2xl mb-8"
                     >
                         Learn to design fault-tolerant services, optimize latency, and operate real production systems. Hands-on projects, mentor reviews, and hiring support — a curriculum built for impact.
                     </motion.p>
@@ -88,9 +86,9 @@ export function Hero() {
                     {/* Window Chrome */}
                     <div className="flex items-center gap-2 px-4 py-3 bg-gray-900 border-b border-gray-800">
                         <div className="flex gap-1.5">
-                            <div className="w-3 h-3 rounded-full bg-gray-700"></div>
-                            <div className="w-3 h-3 rounded-full bg-gray-700"></div>
-                            <div className="w-3 h-3 rounded-full bg-gray-700"></div>
+                            <div className="w-3 h-3 rounded-full bg-red-600"></div>
+                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
                         </div>
                     </div>
 
