@@ -487,23 +487,7 @@ const BentoItem = ({ children, className, title, description, colSpan = "", rowS
     </motion.div>
 )
 
-const StatCounter = ({ value, label, icon: Icon }: { value: string; label: string; icon?: any }) => (
-    <motion.div
-        className="flex flex-col items-center gap-2 group cursor-pointer"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-    >
-        {Icon && (
-            <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.6 }}>
-                <Icon className="w-6 h-6 text-blue-400 group-hover:text-blue-300" />
-            </motion.div>
-        )}
-        <motion.div className="text-2xl font-black text-white group-hover:text-blue-300 transition-colors">
-            {value}
-        </motion.div>
-        <span className="text-xs font-mono text-gray-400 group-hover:text-gray-300">{label}</span>
-    </motion.div>
-)
+
 
 export const Features = () => {
     return (
@@ -607,6 +591,7 @@ export const Features = () => {
                     <MicroservicesDiagram />
                 </BentoItem>
 
+                {/* Backend arc */}
                 <BentoItem
                     colSpan="md:col-span-1"
                     rowSpan="md:row-span-1"
@@ -650,34 +635,81 @@ export const Features = () => {
                 </BentoItem>
 
                 {/* 5. Modern Stack (1x1) - Below Mentorship */}
-                <BentoItem
-                    colSpan="md:col-span-1"
-                    rowSpan="md:row-span-1"
-                    title="Modern Stack"
-                    description="NextJS, Docker, K8s, Solana."
+                <motion.div
+                    className="relative overflow-hidden rounded-2xl bg-[#0A0A0A] border border-[#1F1F1F] group hover:border-blue-500/50 transition-all duration-300 flex flex-col md:col-span-1 md:row-span-1"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5 }}
+                    whileHover={{ y: -4 }}
                 >
-                    <div className="grid grid-cols-2 gap-4 w-full h-full content-center justify-items-center p-6">
-                        {[
-                            { Icon: NextJsIcon, label: "Next.js" },
-                            { Icon: DockerIcon, label: "Docker" },
-                            { Icon: K8sIcon, label: "K8s" },
-                            { Icon: SolanaIcon, label: "Solana" },
-                        ].map((tech, idx) => (
-                            <motion.div
-                                key={idx}
-                                className="flex flex-col items-center gap-1 cursor-pointer"
-                                whileHover={{ scale: 1.15, y: -4 }}
-                                whileTap={{ scale: 0.9 }}
-                                initial={{ opacity: 0.6 }}
-                                whileInView={{ opacity: 1 }}
-                                transition={{ delay: idx * 0.1 }}
-                            >
-                                <tech.Icon className="w-10 h-10 group-hover:text-blue-400 transition-colors" />
-                                <span className="text-[8px] text-gray-500 group-hover:text-gray-300">{tech.label}</span>
-                            </motion.div>
-                        ))}
+                    {/* Enhanced hover gradient */}
+                    <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"
+                        style={{ background: "linear-gradient(180deg, rgba(59,130,246,0.1), rgba(59,130,246,0.05))" }}
+                    />
+
+                    {/* Animated border glow on hover */}
+                    <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+                        style={{ background: "radial-gradient(circle at top right, rgba(59,130,246,0.15), transparent 50%)" }}
+                    />
+
+                    {/* Content Area */}
+                    <div className="grow relative z-10 overflow-hidden flex flex-col bg-linear-to-br from-blue-900/6 via-transparent to-blue-600/6 p-6">
+                        {/* Title Section */}
+                        <motion.div
+                            className="mb-6"
+                            initial={{ opacity: 0, y: -10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <div className="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">
+                                Modern Stack
+                            </div>
+                            <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors leading-snug">
+                                NextJS, Docker, Kafka, Solana.
+                            </div>
+                        </motion.div>
+
+                        {/* Tech Stack Grid */}
+                        <div className="flex-1 flex items-center justify-center">
+                            <div className="grid grid-cols-4 gap-3 w-full max-w-[360px]">
+                                {[
+                                    { icon: "/nextjs-icon.svg", label: "Next.js" },
+                                    { icon: "/docker.svg", label: "Docker" },
+                                    { icon: "/kubernetes.svg", label: "Kubernetes" },
+                                    { icon: "/solana.svg", label: "Solana" },
+                                    { icon: "/aws.svg", label: "AWS" },
+                                    { icon: "/typescript.svg", label: "TypeScript" },
+                                    { icon: "/tailwindcss.svg", label: "TailwindCSS" },
+                                    { icon: "/redux.svg", label: "Redux" },
+                                ].map((tech, idx) => (
+                                    <motion.div
+                                        key={idx}
+                                        className="flex flex-col items-center gap-1.5 cursor-pointer group/tech"
+                                        whileHover={{ scale: 1.08, y: -2 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: 0.3 + idx * 0.05, duration: 0.3 }}
+                                    >
+                                        <div className="w-14 h-14 relative flex items-center justify-center bg-white/5 rounded-lg border border-white/10 group-hover/tech:border-blue-400/50 group-hover/tech:bg-white/10 transition-all duration-300">
+                                            <img
+                                                src={tech.icon}
+                                                alt={tech.label}
+                                                className="w-8 h-8 object-contain group-hover/tech:brightness-125 group-hover/tech:scale-110 transition-all duration-300"
+                                            />
+                                        </div>
+                                        <span className="text-[8px] font-medium text-gray-500 group-hover/tech:text-gray-300 transition-colors text-center">
+                                            {tech.label}
+                                        </span>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                </BentoItem>
+                </motion.div>
 
                 <BentoItem
                     colSpan="md:col-span-1"
@@ -689,42 +721,77 @@ export const Features = () => {
                 </BentoItem>
 
                 {/* 7. Certification (2x1) - Bottom Left */}
-                <BentoItem
-                    colSpan="md:col-span-2"
-                    rowSpan="md:row-span-1"
-                    title="Certification"
-                    description="Proof of work that holds value. Verified on-chain."
+                <motion.div
+                    className="relative overflow-hidden rounded-2xl bg-[#0A0A0A] border border-[#1F1F1F] group hover:border-blue-500/50 transition-all duration-300 flex flex-col md:col-span-2 md:row-span-1"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.5 }}
+                    whileHover={{ y: -4 }}
                 >
-                    <div className="w-full h-full flex items-center justify-around px-10">
-                        <div className="text-left space-y-3">
-                            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}>
-                                <div className="text-2xl font-black text-white group-hover:text-blue-300 transition-colors">
+                    {/* Enhanced hover gradient with more prominent blue */}
+                    <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none"
+                        style={{ background: "linear-gradient(180deg, rgba(59,130,246,0.1), rgba(59,130,246,0.05))" }}
+                    />
+
+                    {/* Animated border glow on hover */}
+                    <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+                        style={{ background: "radial-gradient(circle at top right, rgba(59,130,246,0.15), transparent 50%)" }}
+                    />
+
+                    {/* Content Area */}
+                    <div className="grow relative z-10 overflow-hidden flex items-center justify-between bg-linear-to-br from-blue-900/6 via-transparent to-blue-600/6 px-8 md:px-12 py-8">
+                        {/* Left side content */}
+                        <div className="flex flex-col justify-center space-y-6 z-20 max-w-md">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <div className="text-lg font-bold text-blue-400 mb-3 uppercase tracking-wider">
+                                    Certification
+                                </div>
+                                <div className="text-3xl md:text-4xl font-black text-white group-hover:text-blue-300 transition-colors mb-3">
                                     Verified.
                                 </div>
-                                <div className="text-sm text-gray-500 group-hover:text-gray-400">Shareable on LinkedIn & Twitter.</div>
+                                <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors mb-2">
+                                    Proof of work that holds value. Verified on-chain.
+                                </div>
+                                <div className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors">
+                                    Shareable on LinkedIn & Twitter.
+                                </div>
                             </motion.div>
 
                             <motion.div
-                                className="flex gap-2 pt-2"
+                                className="flex flex-wrap gap-2"
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
-                                transition={{ delay: 0.2 }}
+                                transition={{ delay: 0.2, duration: 0.5 }}
                             >
-                                <div className="flex items-center gap-1 text-xs bg-blue-500/10 border border-blue-500/20 px-2 py-1 rounded-full">
-                                    <Award className="w-3 h-3 text-blue-400" />
-                                    <span className="text-blue-300">NFT Badge</span>
+                                <div className="flex items-center gap-1.5 text-xs bg-blue-500/10 border border-blue-500/20 px-3 py-1.5 rounded-full hover:bg-blue-500/20 transition-colors">
+                                    <Award className="w-3.5 h-3.5 text-blue-400" />
+                                    <span className="text-blue-300 font-medium">NFT Badge</span>
                                 </div>
-                                <div className="flex items-center gap-1 text-xs bg-green-500/10 border border-green-500/20 px-2 py-1 rounded-full">
-                                    <CheckCircle2 className="w-3 h-3 text-green-400" />
-                                    <span className="text-green-300">Verified</span>
+                                <div className="flex items-center gap-1.5 text-xs bg-green-500/10 border border-green-500/20 px-3 py-1.5 rounded-full hover:bg-green-500/20 transition-colors">
+                                    <CheckCircle2 className="w-3.5 h-3.5 text-green-400" />
+                                    <span className="text-green-300 font-medium">Verified</span>
                                 </div>
                             </motion.div>
                         </div>
-                        <div className="w-48 h-32">
+
+                        {/* Right side - Certificate */}
+                        <motion.div
+                            className="shrink-0 z-20 hidden md:block"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                        >
                             <CertificateVisual />
-                        </div>
+                        </motion.div>
                     </div>
-                </BentoItem>
+                </motion.div>
 
             </div>
         </section>

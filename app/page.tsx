@@ -8,7 +8,7 @@ import { Cta } from "@/components/cta";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-black text-white selection:bg-blue-500 selection:text-white overflow-x-hidden font-sans">
       <Navbar />
 
       <main>
