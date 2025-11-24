@@ -7,20 +7,19 @@ export const Cta = () => {
     return (
         <section className="relative  mx-auto px-4 py-24 overflow-hidden ">
             {/* Background noise */}
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-60 pointer-events-none"></div>
 
             {/* Enhanced gradient background layers */}
-            <div className="absolute inset-0 bg-linear-to-br from-blue-600/30 via-blue-500/20 to-transparent"></div>
-            <div className="absolute inset-0 bg-linear-to-tl from-blue-400/20 via-transparent to-white/5"></div>
-            <div className="absolute inset-0 bg-linear-to-t from-transparent via-blue-500/10 to-transparent"></div>
-            <div className="absolute inset-0 bg-radial-gradient from-white/5 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-indigo-700/40 via-blue-700/20 to-blue-900/60"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-blue-500/20 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-indigo-500/20 via-transparent to-transparent"></div>
 
             {/* Animated gradient orbs - larger and more prominent */}
             <motion.div
-                className="absolute -top-20 left-1/4 w-[600px] h-[600px] bg-blue-500/40 rounded-full blur-3xl"
+                className="absolute -top-20 left-1/4 w-[600px] h-[600px] bg-blue-700/30 rounded-full blur-[120px]"
                 animate={{
-                    scale: [1, 1.3, 1],
-                    opacity: [0.4, 0.6, 0.4],
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.5, 0.3],
                     x: [0, 50, 0],
                 }}
                 transition={{
@@ -30,10 +29,10 @@ export const Cta = () => {
                 }}
             />
             <motion.div
-                className="absolute -bottom-20 right-1/4 w-[600px] h-[600px] bg-blue-600/30 rounded-full blur-3xl"
+                className="absolute -bottom-20 right-1/4 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px]"
                 animate={{
-                    scale: [1.3, 1, 1.3],
-                    opacity: [0.3, 0.5, 0.3],
+                    scale: [1.2, 1, 1.2],
+                    opacity: [0.2, 0.4, 0.2],
                     x: [0, -50, 0],
                 }}
                 transition={{
@@ -44,10 +43,10 @@ export const Cta = () => {
             />
             {/* White accent orb */}
             <motion.div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px]"
                 animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.1, 0.2, 0.1],
+                    scale: [1, 1.1, 1],
+                    opacity: [0.05, 0.1, 0.05],
                 }}
                 transition={{
                     duration: 6,
@@ -70,10 +69,10 @@ export const Cta = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-sm mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-[0_0_20px_-5px_rgba(255,255,255,0.1)] mb-8 group hover:bg-white/10 transition-colors"
                     >
-                        <Sparkles className="w-4 h-4 text-blue-400" />
-                        <span className="text-sm font-semibold text-blue-300">Limited Spots Available</span>
+                        <Sparkles className="w-4 h-4 text-blue-300 group-hover:text-blue-200 transition-colors" />
+                        <span className="text-sm font-medium text-blue-100/90 group-hover:text-white transition-colors">Limited Spots Available</span>
                     </motion.div>
 
                     {/* Heading */}
@@ -85,7 +84,7 @@ export const Cta = () => {
                         className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight"
                     >
                         Ready to{" "}
-                        <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-blue-500 to-blue-600">
+                        <span className="text-blue-500 font-bold">
                             10x your career?
                         </span>
                     </motion.h2>

@@ -38,7 +38,7 @@ export const Testimonials = () => {
     const col3 = testimonials.slice(6, 9);
 
     return (
-        <section className="py-32 w-full bg-black overflow-hidden relative">
+        <section className="py-16 w-full bg-black overflow-hidden relative">
             {/* Background noise */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none"></div>
 

@@ -1,16 +1,16 @@
 "use client"
 import { motion } from "motion/react"
-import { OpenSourceBento } from "./features/bento/OpenSourceBento"
 import { TeamBento } from "./features/bento/TeamBento"
 import { BackendBento, MentorshipBento, ModernStackBento, ContributionBento } from "./features/bento/SmallBentos"
 import { CertificationBento } from "./features/bento/CertificationBento"
+import { JoinCardDemo } from "./features/bento/JoinCardDemo"
 
 export const Features = () => {
     return (
-        <section className="py-32 px-4 bg-black relative border-b border-[#111]" id="syllabus">
+        <section className="py-16 px-4 bg-black relative border-b border-[#111]" id="syllabus">
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none"></div>
 
-            <div className="max-w-7xl mx-auto mb-16 px-2 md:px-4">
+            <div className="max-w-7xl mx-auto mb-10 px-2 md:px-4">
                 <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                     <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
                         Why{" "}
@@ -24,7 +24,7 @@ export const Features = () => {
             </div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-[280px] gap-4 px-2 md:px-4">
-                <OpenSourceBento />
+                <JoinCardDemo />
                 <TeamBento />
                 <BackendBento />
                 <MentorshipBento />

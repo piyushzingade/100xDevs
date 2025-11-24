@@ -32,7 +32,7 @@ export const TeamShowcase = () => {
                         {['Full-Stack', 'DevOps'].map((tag) => (
                             <span
                                 key={tag}
-                                className="text-[10px] font-mono font-semibold uppercase px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-300"
+                                className="flex items-center justify-center text-[10px] font-mono font-semibold uppercase px-2.5 py-1 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-300"
                             >
                                 {tag}
                             </span>

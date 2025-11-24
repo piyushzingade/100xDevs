@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 import { ExpandableCards } from "../ExpandableCards"
 
 
-export const OpenSourceBento = () => (
+export const JoinCardDemo = () => (
     <motion.div
         className="relative overflow-hidden rounded-2xl bg-[#0A0A0A] border border-[#1F1F1F] group hover:border-blue-500/50 transition-all duration-300 flex flex-col md:col-span-2 md:row-span-2"
         initial={{ opacity: 0, y: 20 }}

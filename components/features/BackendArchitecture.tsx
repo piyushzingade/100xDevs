@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 export const BackendArchitectureDiagram = () => {
     return (
         <div className="relative w-full h-full flex items-center justify-center p-2 md:p-4">
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 300">
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 400 300" preserveAspectRatio="none">
                 <defs>
                     <style>{`
                         .dashed-line {
@@ -22,7 +22,7 @@ export const BackendArchitectureDiagram = () => {
                 </defs>
 
                 <path
-                    d="M 100 80 L 200 80 L 300 80 L 300 150 L 300 220 L 200 220 L 100 220 L 100 150 L 100 80"
+                    d="M 90 80 L 200 80 L 310 80 L 310 150 L 310 220 L 200 220 L 90 220 L 90 150 L 90 80"
                     className="dashed-line"
                     strokeWidth="1.5"
                 />
@@ -31,7 +31,7 @@ export const BackendArchitectureDiagram = () => {
                     <animateMotion
                         dur="8s"
                         repeatCount="indefinite"
-                        path="M 100 80 L 200 80 L 300 80 L 300 150 L 300 220 L 200 220 L 100 220 L 100 150 L 100 80"
+                        path="M 90 80 L 200 80 L 310 80 L 310 150 L 310 220 L 200 220 L 90 220 L 90 150 L 90 80"
                     />
                 </motion.circle>
 
@@ -39,13 +39,13 @@ export const BackendArchitectureDiagram = () => {
                     <animateMotion
                         dur="8s"
                         repeatCount="indefinite"
-                        path="M 100 80 L 200 80 L 300 80 L 300 150 L 300 220 L 200 220 L 100 220 L 100 150 L 100 80"
+                        path="M 90 80 L 200 80 L 310 80 L 310 150 L 310 220 L 200 220 L 90 220 L 90 150 L 90 80"
                     />
                 </motion.circle>
             </svg>
 
-            <div className="absolute inset-0 flex flex-col items-center justify-between p-2 md:p-4 pointer-events-auto">
-                <div className="flex justify-around w-full px-2 md:px-6 mt-1 md:mt-2 gap-1 md:gap-2">
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 md:gap-10 p-2 md:p-4 pointer-events-auto">
+                <div className="flex justify-around w-full px-8 md:px-12 gap-0.5 md:gap-1">
                     <motion.div className="w-10 h-9 md:w-14 md:h-11 rounded-lg bg-blue-500/10 border border-blue-400/40 flex items-center justify-center shadow-lg hover:shadow-blue-400/30 hover:border-blue-400 transition-all">
                         <div className="text-[8px] md:text-[10px] text-blue-300 font-mono font-bold">API</div>
                     </motion.div>
@@ -61,7 +61,7 @@ export const BackendArchitectureDiagram = () => {
                     <div className="text-[8px] md:text-[10px] text-yellow-300 font-mono font-bold">QUEUE</div>
                 </motion.div>
 
-                <div className="flex justify-around w-full px-2 md:px-6 mb-1 md:mb-2 gap-1 md:gap-2">
+                <div className="flex justify-around w-full px-8 md:px-12 gap-0.5 md:gap-1">
                     <motion.div className="w-10 h-9 md:w-14 md:h-11 rounded-lg bg-green-500/10 border border-green-400/40 flex items-center justify-center shadow-lg hover:shadow-green-400/30 hover:border-green-400 transition-all">
                         <div className="text-[8px] md:text-[10px] text-green-300 font-mono font-bold">CACHE</div>
                     </motion.div>
