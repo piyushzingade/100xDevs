@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -42,9 +43,9 @@ export const Navbar: React.FC = () => {
                     >
                         <div
                             aria-hidden
-                            className="w-9 h-9 rounded-lg flex items-center justify-center bg-linear-to-br from-blue-500 to-blue-700 shadow-md transform transition-transform duration-200 group-hover:scale-105"
+                            className="w-9 h-9 rounded-lg flex items-center justify-center shadow-md transform transition-transform duration-200 group-hover:scale-105"
                         >
-                            <Code2 className="w-5 h-5 text-white" />
+                            <Image src={"/profile.jpg"} alt="Profile" width={36} height={36} className='rounded-full' />
                         </div>
 
                         <span className="text-lg font-semibold text-white tracking-tight">100xDevs</span>
