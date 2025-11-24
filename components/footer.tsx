@@ -55,7 +55,7 @@ export const Footer = () => {
                                 {/* Social Media Links */}
                                 <div className="flex items-center gap-4">
                                     <a
-                                        href="https://youtube.com"
+                                        href="https://www.youtube.com/@harkirat1"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-gray-400 hover:text-white transition-colors"
@@ -66,7 +66,7 @@ export const Footer = () => {
                                         </svg>
                                     </a>
                                     <a
-                                        href="https://x.com"
+                                        href="https://x.com/kirat_tw"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-gray-400 hover:text-white transition-colors"

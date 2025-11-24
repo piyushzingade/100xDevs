@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "motion/react"
 import { Users } from "lucide-react"
+import Image from "next/image"
 
 export const LiveMentorship = () => (
     <>
@@ -14,7 +15,7 @@ export const LiveMentorship = () => (
                 className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-linear-to-br from-[#1a1a1a] to-brand-black border-2 border-[#333] flex items-center justify-center group-hover:border-blue-500/50 transition-all shadow-xl relative"
                 transition={{ duration: 0.3 }}
             >
-                <Users className="w-7 h-7 md:w-9 md:h-9 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                <Image src={"/profile.jpg"} alt="Profile" width={100} height={100} className='rounded-full' />
 
                 <motion.div
                     className="absolute -top-1 -right-1 bg-linear-to-r from-red-500 to-red-600 text-white text-[8px] md:text-[9px] font-bold px-1.5 md:px-2 py-0.5 rounded-full shadow-lg"
