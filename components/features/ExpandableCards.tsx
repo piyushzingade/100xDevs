@@ -24,38 +24,40 @@ export const ExpandableCards = () => {
                             key={index}
                             layout
                             onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                            className={
-                                `bg-linear-to-br from-blue-500/40 to-blue-600/40 hover:from-blue-500/70 hover:to-blue-600/70
-                                 rounded-lg md:rounded-xl
-                                 px-4 py-3 md:px-5 md:py-4
-                                 cursor-pointer
-                                 border border-white/10 hover:border-white/25
-                                 transition-colors overflow-hidden flex-col items-start text-center justify-center
-                                 shrink-0
-                                 ${isExpanded ? "shadow-lg" : "shadow-sm"}
-                                 ${visibilityClass}`
-                            }
+                            className={`
+                                bg-linear-to-br from-blue-500/40 to-blue-600/40
+                                hover:from-blue-500/70 hover:to-blue-600/70
+                                rounded-lg md:rounded-xl
+                                px-4 py-3 md:px-5 md:py-4
+                                cursor-pointer
+                                border border-white/10 hover:border-white/25
+                                transition-colors overflow-hidden
+                                flex flex-col items-start justify-center
+                                ${isExpanded ? "shadow-lg" : "shadow-sm"}
+                                ${visibilityClass}
+                            `}
                             initial={false}
                             animate={{
                                 flex: isExpanded ? 2 : 1,
-                                minHeight: isExpanded ? "auto" : "auto"
                             }}
                             transition={{
                                 layout: { duration: 0.3, ease: "easeOut" },
                                 flex: { duration: 0.3, ease: "easeOut" }
                             }}
                         >
-                            <h3 className="text-sm md:text-base font-semibold text-white leading-snug">
+                            {/* Title – clean typography, same color */}
+                            <h3 className="w-full text-left text-base sm:text-lg md:text-xl font-semibold text-white leading-snug">
                                 {card.title}
                             </h3>
 
+                            {/* Description – same exact color as your version */}
                             {isExpanded && (
                                 <motion.p
-                                    initial={{ opacity: 0, height: 0 }}
-                                    animate={{ opacity: 1, height: "auto" }}
-                                    exit={{ opacity: 0, height: 0 }}
-                                    transition={{ duration: 0.2 }}
-                                    className="mt-2 text-xs text-blue-200 leading-relaxed"
+                                    initial={{ opacity: 0, y: -6 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -6 }}
+                                    transition={{ duration: 0.22 }}
+                                    className="mt-2 text-xs sm:text-sm md:text-base text-blue-200 leading-relaxed"
                                 >
                                     {card.description}
                                 </motion.p>
@@ -65,9 +67,9 @@ export const ExpandableCards = () => {
                 })}
             </div>
 
-            {/* Mobile indicator that there are more cards (optional, but helpful since we hide them) */}
-            <div className="md:hidden text-[10px] text-gray-500 text-center pt-1">
-                + more features inside
+            {/* Mobile hint (same color style) */}
+            <div className="md:hidden text-[11px] text-gray-400 text-left pt-1">
+                + more features inside — tap to expand
             </div>
         </div>
     )
