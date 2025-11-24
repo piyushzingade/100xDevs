@@ -102,9 +102,9 @@ export function Hero() {
                         </div>
 
                         {/* Dashboard Content */}
-                        <div className="flex h-[600px]">
-                            {/* Left Sidebar */}
-                            <div className="w-64 bg-gray-950 border-r border-gray-800 flex flex-col">
+                        <div className="flex h-[400px] md:h-[600px]">
+                            {/* Left Sidebar - Hidden on mobile */}
+                            <div className="hidden md:flex w-64 bg-gray-950 border-r border-gray-800 flex-col">
                                 {/* Logo */}
                                 <div className="p-4 border-b border-gray-800">
                                     <div className="flex items-center gap-2">
@@ -183,10 +183,10 @@ export function Hero() {
                             {/* Main Content Area */}
                             <div className="flex-1 flex flex-col bg-black">
                                 {/* Top Bar */}
-                                <div className="p-4 border-b border-gray-800 flex items-center justify-between">
+                                <div className="p-3 md:p-4 border-b border-gray-800 flex items-center justify-between">
                                     <div>
-                                        <p className="text-sm text-white/50">100xDevs</p>
-                                        <p className="text-lg font-semibold text-white">Course Dashboard</p>
+                                        <p className="text-xs md:text-sm text-white/50">100xDevs</p>
+                                        <p className="text-base md:text-lg font-semibold text-white">Course Dashboard</p>
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <button className="p-2 hover:bg-gray-900 rounded-lg transition-colors">
@@ -196,32 +196,33 @@ export function Hero() {
                                 </div>
 
                                 {/* Central Message Area */}
-                                <div className="flex-1 flex items-center justify-center p-8">
+                                <div className="flex-1 flex items-center justify-center p-4 md:p-8">
                                     <div className="text-center max-w-md">
-                                        <p className="text-lg text-white/90 mb-2">
+                                        <p className="text-sm md:text-lg text-white/90 mb-2">
                                             Your premium coding course with hands-on projects and real-world systems.
                                         </p>
-                                        <p className="text-sm text-white/60">
+                                        <p className="text-xs md:text-sm text-white/60">
                                             Select a project above and start building production-ready applications!
                                         </p>
                                     </div>
                                 </div>
 
                                 {/* Input Area */}
-                                <div className="p-4 border-t border-gray-800">
-                                    <div className="flex items-center gap-3">
-                                        <button className="flex items-center gap-2 px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg hover:bg-gray-800 transition-colors text-sm text-white/90">
+                                <div className="p-3 md:p-4 border-t border-gray-800">
+                                    <div className="flex flex-col md:flex-row items-stretch md:items-center gap-2 md:gap-3">
+                                        <button className="hidden md:flex items-center gap-2 px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg hover:bg-gray-800 transition-colors text-sm text-white/90">
                                             <Code2 className="w-4 h-4" />
                                             Generate Code
                                         </button>
                                         <input
                                             type="text"
                                             placeholder="Describe what you want to build..."
-                                            className="flex-1 px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all"
+                                            className="flex-1 px-3 md:px-4 py-2 bg-gray-900 border border-gray-800 rounded-lg text-sm md:text-base text-white placeholder:text-white/40 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all"
                                         />
-                                        <button className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium">
+                                        <button className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-sm font-medium">
                                             <ArrowRight className="w-4 h-4" />
-                                            Run Code
+                                            <span className="hidden md:inline">Run Code</span>
+                                            <span className="md:hidden">Run</span>
                                         </button>
                                     </div>
                                 </div>

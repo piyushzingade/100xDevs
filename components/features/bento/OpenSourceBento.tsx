@@ -21,18 +21,18 @@ export const OpenSourceBento = () => (
             style={{ background: "radial-gradient(circle at top right, rgba(59,130,246,0.15), transparent 50%)" }}
         />
 
-        <div className="grow relative z-10 overflow-hidden flex flex-col bg-linear-to-br from-blue-900/6 via-transparent to-blue-600/6 p-6">
+        <div className="grow relative z-10 overflow-hidden flex flex-col bg-linear-to-br from-blue-900/6 via-transparent to-blue-600/6 p-4 md:p-6">
             <motion.div
-                className="mb-6"
+                className="mb-4 md:mb-6"
                 initial={{ opacity: 0, y: -10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
             >
-                <div className="text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">
-                    Open Source Architect
+                <div className="text-base md:text-lg font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">
+                    Why Join 100xDevs?
                 </div>
-                <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors leading-snug">
-                    Contribute to real projects. We've merged PRs into top repositories.
+                <div className="text-[10px] md:text-xs text-gray-400 group-hover:text-gray-300 transition-colors leading-snug">
+                    Transform your career with industry-leading curriculum and real-world experience
                 </div>
             </motion.div>
 

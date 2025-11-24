@@ -11,13 +11,13 @@ export const LiveMentorship = () => (
             transition={{ delay: 0.3 }}
         >
             <motion.div
-                className="w-20 h-20 rounded-full bg-linear-to-br from-[#1a1a1a] to-brand-black border-2 border-[#333] flex items-center justify-center group-hover:border-blue-500/50 transition-all shadow-xl relative"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-linear-to-br from-[#1a1a1a] to-brand-black border-2 border-[#333] flex items-center justify-center group-hover:border-blue-500/50 transition-all shadow-xl relative"
                 transition={{ duration: 0.3 }}
             >
-                <Users className="w-9 h-9 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                <Users className="w-7 h-7 md:w-9 md:h-9 text-gray-400 group-hover:text-blue-400 transition-colors" />
 
                 <motion.div
-                    className="absolute -top-1 -right-1 bg-linear-to-r from-red-500 to-red-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-lg"
+                    className="absolute -top-1 -right-1 bg-linear-to-r from-red-500 to-red-600 text-white text-[8px] md:text-[9px] font-bold px-1.5 md:px-2 py-0.5 rounded-full shadow-lg"
                     animate={{ scale: [1, 1.15, 1] }}
                     transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
                 >
@@ -32,10 +32,10 @@ export const LiveMentorship = () => (
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
         >
-            <div className="text-3xl font-black text-blue-400 group-hover:text-blue-300 transition-colors mb-1">
+            <div className="text-2xl md:text-3xl font-black text-blue-400 group-hover:text-blue-300 transition-colors mb-1">
                 2x
             </div>
-            <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors uppercase tracking-wider">
+            <div className="text-[10px] md:text-xs text-gray-500 group-hover:text-gray-400 transition-colors uppercase tracking-wider">
                 per week
             </div>
         </motion.div>

@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
 
                         <Link
                             href="#signup"
-                            className="inline-flex items-center px-4 py-2 rounded-lg bg-linear-to-br from-blue-500 to-blue-700   font-semibold shadow-sm hover:translate-y-px transition-transform"
+                            className="inline-flex items-center px-4 py-2 rounded-lg bg-linear-to-br from-blue-500 to-blue-700  mak font-semibold shadow-sm hover:translate-y-px transition-transform"
                         >
                             Signup
                         </Link>

@@ -21,23 +21,23 @@ export const CertificationBento = () => (
             style={{ background: "radial-gradient(circle at top right, rgba(59,130,246,0.15), transparent 50%)" }}
         />
 
-        <div className="grow relative z-10 overflow-hidden flex items-center justify-between bg-linear-to-br from-blue-900/6 via-transparent to-blue-600/6 px-8 md:px-12 py-8">
-            <div className="flex flex-col justify-center space-y-6 z-20 max-w-md">
+        <div className="grow relative z-10 overflow-hidden flex items-center justify-between bg-linear-to-br from-blue-900/6 via-transparent to-blue-600/6 px-4 md:px-8 lg:px-12 py-6 md:py-8">
+            <div className="flex flex-col justify-center space-y-3 md:space-y-6 z-20 max-w-md">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <div className="text-lg font-bold text-blue-400 mb-3 uppercase tracking-wider">
+                    <div className="text-sm md:text-lg font-bold text-blue-400 mb-2 md:mb-3 uppercase tracking-wider">
                         Certification
                     </div>
-                    <div className="text-3xl md:text-4xl font-black text-white group-hover:text-blue-300 transition-colors mb-3">
+                    <div className="text-2xl md:text-3xl lg:text-4xl font-black text-white group-hover:text-blue-300 transition-colors mb-2 md:mb-3">
                         Verified.
                     </div>
-                    <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors mb-2">
+                    <div className="text-xs md:text-sm text-gray-400 group-hover:text-gray-300 transition-colors mb-1 md:mb-2">
                         Proof of work that holds value. Verified on-chain.
                     </div>
-                    <div className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors">
+                    <div className="text-xs md:text-sm text-gray-500 group-hover:text-gray-400 transition-colors">
                         Shareable on LinkedIn & Twitter.
                     </div>
                 </motion.div>
@@ -60,7 +60,7 @@ export const CertificationBento = () => (
             </div>
 
             <motion.div
-                className="shrink-0 z-20 hidden md:block"
+                className="shrink-0 z-20 hidden lg:block"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}

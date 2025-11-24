@@ -25,7 +25,7 @@ export const ExpandableCards = () => {
     ]
 
     return (
-        <div className="flex-1 flex flex-col gap-2.5">
+        <div className="flex-1 flex flex-col gap-2 md:gap-2.5">
             {cards.map((card, index) => {
                 const isExpanded = expandedIndex === index
 
@@ -34,7 +34,7 @@ export const ExpandableCards = () => {
                         key={index}
                         layout
                         onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                        className="bg-linear-to-br from-gray-700 to-gray-800 rounded-xl p-6 cursor-pointer border border-white/10 hover:border-white/30 transition-colors overflow-hidden flex flex-col items-start justify-center text-start"
+                        className="bg-linear-to-br from-gray-700 to-gray-800 rounded-lg md:rounded-xl p-4 md:p-6 cursor-pointer border border-white/10 hover:border-white/30 transition-colors overflow-hidden flex flex-col items-start justify-center text-start"
                         animate={{
                             flex: isExpanded ? 2 : 1,
                         }}
@@ -43,7 +43,7 @@ export const ExpandableCards = () => {
                             flex: { duration: 0.5, ease: [0.4, 0, 0.2, 1] }
                         }}
                     >
-                        <h3 className="text-xl font-bold text-white">
+                        <h3 className="text-base md:text-xl font-bold text-white">
                             {card.title}
                         </h3>
                         {isExpanded && (
@@ -52,7 +52,7 @@ export const ExpandableCards = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -10 }}
                                 transition={{ duration: 0.3, ease: "easeOut" }}
-                                className="text-base text-gray-200 leading-relaxed mt-2"
+                                className="text-sm md:text-base text-gray-200 leading-relaxed mt-2"
                             >
                                 {card.description}
                             </motion.p>
