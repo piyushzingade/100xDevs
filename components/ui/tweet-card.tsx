@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heart, MessageCircle, Repeat, Share } from 'lucide-react';
 import { Testimonial } from '../../types';
+import Image from 'next/image';
 
 interface TweetCardProps {
     tweet: Testimonial;
@@ -18,7 +19,7 @@ export const TweetCard = ({ tweet }: TweetCardProps) => {
                 <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-linear-to-tr from-slate-700 to-slate-600 flex items-center justify-center text-sm font-bold text-white overflow-hidden">
                         {tweet.avatarUrl ? (
-                            <img src={tweet.avatarUrl} alt={tweet.name} className="w-full h-full object-cover" />
+                            <Image src={tweet.avatarUrl} alt={tweet.name} width={24} height={24} className="w-full h-full object-cover" />
                         ) : (
                             tweet.name[0]
                         )}

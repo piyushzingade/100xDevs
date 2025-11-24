@@ -1,9 +1,13 @@
+import Image from "next/image"
+
 export const TeamShowcase = () => {
     return (
         <div className="w-full h-full flex items-center justify-center p-2 md:p-4">
             <div className="flex flex-col items-center gap-4 md:gap-6 w-full max-w-sm">
                 <div className="shrink-0">
-                    <img
+                    <Image
+                        width={144}
+                        height={144}
                         src="/image.png"
                         alt="Harkirat Singh"
                         className="w-32 h-32 md:w-56 md:h-56 object-cover rounded-2xl border-2 border-blue-500/30 shadow-xl"

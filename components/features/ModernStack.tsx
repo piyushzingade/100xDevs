@@ -1,5 +1,6 @@
 "use client"
 import { motion } from "motion/react"
+import Image from "next/image"
 
 export const ModernStack = () => {
     const techStack = [
@@ -25,9 +26,11 @@ export const ModernStack = () => {
                     transition={{ delay: 0.3 + idx * 0.05, duration: 0.3 }}
                 >
                     <div className="w-10 h-10 md:w-14 md:h-14 relative flex items-center justify-center bg-white/5 rounded-lg border border-white/10 group-hover/tech:border-blue-400/50 group-hover/tech:bg-white/10 transition-all duration-300">
-                        <img
+                        <Image
                             src={tech.icon}
                             alt={tech.label}
+                            width={24}
+                            height={24}
                             className="w-6 h-6 md:w-8 md:h-8 object-contain group-hover/tech:brightness-125 group-hover/tech:scale-110 transition-all duration-300"
                         />
                     </div>
